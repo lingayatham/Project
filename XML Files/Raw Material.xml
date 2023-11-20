@@ -1,0 +1,12 @@
+<DocumentElement>
+  <Sheet1>
+    <Material_x0020_ID>101</Material_x0020_ID>
+    <Material_x0020_Type>Recycled Plastic</Material_x0020_Type>
+    <Description_x0020_>Durable and eco-friendly material.</Description_x0020_>
+  </Sheet1>
+  <Sheet1>
+    <Material_x0020_ID>102</Material_x0020_ID>
+    <Material_x0020_Type>Plant Fibers           </Material_x0020_Type>
+    <Description_x0020_>Strong and resilient in various conditions.</Description_x0020_>
+  </Sheet1>
+</DocumentElement>

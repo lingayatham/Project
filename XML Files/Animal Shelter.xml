@@ -1,0 +1,17 @@
+<DocumentElement>
+  <Sheet1>
+    <Shelter_x0020_ID>1</Shelter_x0020_ID>
+    <Shelter_x0020_Type>Cozy Wildlife Shelter</Shelter_x0020_Type>
+    <Description>A cozy shelter for small animals.</Description>
+  </Sheet1>
+  <Sheet1>
+    <Shelter_x0020_ID>2</Shelter_x0020_ID>
+    <Shelter_x0020_Type>Spacious Birdhouse</Shelter_x0020_Type>
+    <Description>A spacious shelter for birds.</Description>
+  </Sheet1>
+  <Sheet1>
+    <Shelter_x0020_ID>3</Shelter_x0020_ID>
+    <Shelter_x0020_Type>Secluded Forest Dwelling</Shelter_x0020_Type>
+    <Description>A secluded shelter for forest creatures.</Description>
+  </Sheet1>
+</DocumentElement>

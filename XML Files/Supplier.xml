@@ -1,0 +1,38 @@
+<DocumentElement>
+  <Sheet1>
+    <Supplier_x0020_ID>201</Supplier_x0020_ID>
+    <Supplier_x0020_Name>GreenTech Industries</Supplier_x0020_Name>
+    <Location>Aurora</Location>
+    <Material_x0020_Supplied>Sustainable Composite Materials</Material_x0020_Supplied>
+  </Sheet1>
+  <Sheet1>
+    <Supplier_x0020_ID>202</Supplier_x0020_ID>
+    <Supplier_x0020_Name>EcoMaterial Suppliers Inc.</Supplier_x0020_Name>
+    <Location>Naperville</Location>
+    <Material_x0020_Supplied>Sustainable Composite Materials</Material_x0020_Supplied>
+  </Sheet1>
+  <Sheet1>
+    <Supplier_x0020_ID>301</Supplier_x0020_ID>
+    <Supplier_x0020_Name>Bamboo Innovations</Supplier_x0020_Name>
+    <Location>Peoria</Location>
+    <Material_x0020_Supplied>Eco-Friendly Wood Substitutes</Material_x0020_Supplied>
+  </Sheet1>
+  <Sheet1>
+    <Supplier_x0020_ID>302</Supplier_x0020_ID>
+    <Supplier_x0020_Name>TimberTech</Supplier_x0020_Name>
+    <Location>Rockford</Location>
+    <Material_x0020_Supplied>Eco-Friendly Wood Substitutes</Material_x0020_Supplied>
+  </Sheet1>
+  <Sheet1>
+    <Supplier_x0020_ID>401</Supplier_x0020_ID>
+    <Supplier_x0020_Name>GlassTech Solutions</Supplier_x0020_Name>
+    <Location>Lombard</Location>
+    <Material_x0020_Supplied>Recycled Glass and Steel Parts</Material_x0020_Supplied>
+  </Sheet1>
+  <Sheet1>
+    <Supplier_x0020_ID>402</Supplier_x0020_ID>
+    <Supplier_x0020_Name>SteelWorks Ltd.</Supplier_x0020_Name>
+    <Location>Sugargrove</Location>
+    <Material_x0020_Supplied>Recycled Glass and Steel Parts</Material_x0020_Supplied>
+  </Sheet1>
+</DocumentElement>
