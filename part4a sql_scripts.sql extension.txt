@@ -1,0 +1,192 @@
+
+Setting environment for using XAMPP for Windows.
+linga@LINGA c:\Users\linga\OneDrive\Desktop\xampp
+# mysql -h localhost -u root
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 157
+Server version: 10.4.28-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> CREATE DATABASE IF NOT EXISTS project;
+Query OK, 1 row affected (0.003 sec)
+
+MariaDB [(none)]> USE project;
+Database changed
+MariaDB [project]> CREATE TABLE IF NOT EXISTS animalshelter(
+    -> shelterid INT PRIMARY KEY,
+    -> sheltertype VARCHAR(100),
+    -> description VARCHAR(255)
+    -> );
+Query OK, 0 rows affected (0.021 sec)
+
+MariaDB [project]> DESCRIBE animalshelter;
++-------------+--------------+------+-----+---------+-------+
+| Field       | Type         | Null | Key | Default | Extra |
++-------------+--------------+------+-----+---------+-------+
+| shelterid   | int(11)      | NO   | PRI | NULL    |       |
+| sheltertype | varchar(100) | YES  |     | NULL    |       |
+| description | varchar(255) | YES  |     | NULL    |       |
++-------------+--------------+------+-----+---------+-------+
+3 rows in set (0.015 sec)
+
+MariaDB [project]> LOAD DATA INFILE 'C:/Users/linga/OneDrive/Desktop/CSV Files/Animal Shelter.csv' INTO TABLE animalshelter FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+Query OK, 3 rows affected (0.011 sec)
+Records: 3  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [project]> SELECT * FROM animalshelters;
+ERROR 1146 (42S02): Table 'project.animalshelters' doesn't exist
+MariaDB [project]> SELECT * FROM animalshelter;
++-----------+--------------------------+-------------------------------------------+
+| shelterid | sheltertype              | description                               |
++-----------+--------------------------+-------------------------------------------+
+        | 1 | Cozy Wildlife Shelter    | A cozy shelter for small animals.
+            | Spacious Birdhouse       | A spacious shelter for birds.
+ |        3 | Secluded Forest Dwelling | A secluded shelter for forest creatures.
++-----------+--------------------------+-------------------------------------------+
+3 rows in set (0.001 sec)
+
+MariaDB [project]> CREATE TABLE IF NOT EXISTS rawmaterial(
+    -> rawmaterialid INT PRIMARY KEY,
+    -> rawmaterialtype VARCHAR(70),
+    -> clear;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 4
+MariaDB [project]> CREATE TABLE IF NOT EXISTS rawmaterial(
+    -> materialid INT PRIMARY KEY,
+    -> materialtype VARCHAR(70),
+    -> description VARCHAR(255)
+    -> );
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [project]> DESCRIBE rawmaterial;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| materialid   | int(11)      | NO   | PRI | NULL    |       |
+| materialtype | varchar(70)  | YES  |     | NULL    |       |
+| description  | varchar(255) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.014 sec)
+
+MariaDB [project]> LOAD DATA INFILE 'C:/Users/linga/OneDrive/Desktop/CSV Files/Raw Material.csv' INTO TABLE rawmaterial FI
+ELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+Query OK, 2 rows affected (0.012 sec)
+Records: 2  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [project]> SELECT * FROM rawmaterial;
++------------+-------------------------+----------------------------------------------+
+| materialid | materialtype            | description                                  |
++------------+-------------------------+----------------------------------------------+
+          |1 | Recycled Plastic        | Durable and eco-friendly material.
+ |       102 | Plant Fibers            | Strong and resilient in various conditions.
++------------+-------------------------+----------------------------------------------+
+2 rows in set (0.000 sec)
+
+MariaDB [project]> CREATE TABLE IF NOT EXISTS supplier(
+    -> supplierid INT PRIMARY KEY,
+    -> suppliername VARCHAR(100),
+    -> location VARCHAR(60),
+    -> materialssupplied VARCHAR(255)
+    -> );
+Query OK, 0 rows affected (0.009 sec)
+
+MariaDB [project]> DESCRIBE supplier;
++-------------------+--------------+------+-----+---------+-------+
+| Field             | Type         | Null | Key | Default | Extra |
++-------------------+--------------+------+-----+---------+-------+
+| supplierid        | int(11)      | NO   | PRI | NULL    |       |
+| suppliername      | varchar(100) | YES  |     | NULL    |       |
+| location          | varchar(60)  | YES  |     | NULL    |       |
+| materialssupplied | varchar(255) | YES  |     | NULL    |       |
++-------------------+--------------+------+-----+---------+-------+
+4 rows in set (0.015 sec)
+
+MariaDB [project]> LOAD DATA INFILE 'C:/Users/linga/OneDrive/Desktop/CSV Files/Supplier.csv' INTO supplier FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'supplier FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES' at line 1
+MariaDB [project]> LOAD DATA INFILE 'C:/Users/linga/OneDrive/Desktop/CSV Files/Supplier.csv' INTO TABLE supplier FIELDS TE
+RMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+Query OK, 6 rows affected (0.012 sec)
+Records: 6  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [project]> SELECT * FROM supplier;
++------------+----------------------------+------------+----------------------------------+
+| supplierid | suppliername               | location   | materialssupplied                |
++------------+----------------------------+------------+----------------------------------+
+ |       201 | GreenTech Industries       | Aurora     | Sustainable Composite Materials
+ |       202 | EcoMaterial Suppliers Inc. | Naperville | Sustainable Composite Materials
+   |     301 | Bamboo Innovations         | Peoria     | Eco-Friendly Wood Substitutes
+   |     302 | TimberTech                 | Rockford   | Eco-Friendly Wood Substitutes
+  |      401 | GlassTech Solutions        | Lombard    | Recycled Glass and Steel Parts
+  |      402 | SteelWorks Ltd.            | Sugargrove | Recycled Glass and Steel Parts
++------------+----------------------------+------------+----------------------------------+
+6 rows in set (0.002 sec)
+
+MariaDB [project]> CREATE TABLE IF NOT EXISTS location(
+    ->
+    -> ;
+ERROR 1064 (42000): You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near '' at line 1
+MariaDB [project]> CREATE TABLE IF NOT EXISTS officelocation(
+    -> locationid INT PRIMARY KEY,
+    -> locationname VARCHAR(80),
+    -> description VARCHAR(200)
+    -> );
+Query OK, 0 rows affected (0.007 sec)
+
+MariaDB [project]> DESCRIBE officelocation;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| locationid   | int(11)      | NO   | PRI | NULL    |       |
+| locationname | varchar(80)  | YES  |     | NULL    |       |
+| description  | varchar(200) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.013 sec)
+
+MariaDB [project]> LOAD DATA INFILE 'C:/Users/linga/OneDrive/Desktop/CSV Files/Location.csv' INTO TABLE officelocation FIE
+LDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+Query OK, 1 row affected (0.004 sec)
+Records: 1  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [project]> SELECT * FROM officelocation;
++------------+--------------+--------------------------------------------------------+
+| locationid | locationname | description                                            |
++------------+--------------+--------------------------------------------------------+
+ |       504 | Chicago      | Main office for administrative and design activities.
++------------+--------------+--------------------------------------------------------+
+1 row in set (0.000 sec)
+
+MariaDB [project]> CREATE TABLE IF NOT EXISTS operatinglocation(
+    -> locationid INT PRIMARY KEY,
+    -> locationname VARCHAR(80),
+    -> description VARCHAR(255)
+    -> );
+Query OK, 0 rows affected (0.008 sec)
+
+MariaDB [project]> DESCRIBE operatinglocation;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| locationid   | int(11)      | NO   | PRI | NULL    |       |
+| locationname | varchar(80)  | YES  |     | NULL    |       |
+| description  | varchar(255) | YES  |     | NULL    |       |
++--------------+--------------+------+-----+---------+-------+
+3 rows in set (0.011 sec)
+
+MariaDB [project]> LOAD DATA INFILE 'C:/Users/linga/OneDrive/Desktop/CSV Files/Operating Location.csv' INTO TABLE operatin
+glocation FIELDS TERMINATED BY ',' LINES TERMINATED BY '\n' IGNORE 1 LINES;
+Query OK, 3 rows affected (0.003 sec)
+Records: 3  Deleted: 0  Skipped: 0  Warnings: 0
+
+MariaDB [project]> SELECT * FROM operatinglocation;
++------------+--------------+--------------------------------------------------------------------------+
+| locationid | locationname | description                                                              |
++------------+--------------+--------------------------------------------------------------------------+
+ |       601 | Carbondale   | Potential future location with significant wildlife conservation needs.
+ |       602 | Springfield  | Potential future location with significant wildlife conservation needs.
+ |       603 | Champaign    | Potential future location with significant wildlife conservation needs.
++------------+--------------+--------------------------------------------------------------------------+
+3 rows in set (0.000 sec)
+
+MariaDB [project]>
