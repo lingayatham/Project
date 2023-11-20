@@ -1,0 +1,32 @@
+
+SHOW COLUMNS FROM animalshelter;
+ALTER TABLE animalshelter
+ADD COLUMN status ENUM('Active', 'Inactive') NOT NULL DEFAULT 'Active';
+SHOW COLUMNS FROM animalshelter;
+
+INSERT INTO animalshelter (shelterid, sheltertype, description)
+VALUES (4, 'Cozy Aquarium', 'A cozy shelter for aquatic animals');
+
+
+INSERT INTO animalshelter (sherterid, sheltertype, description, status)
+VALUES (4, 'Cozy Aquarium', 'A cozy shelter for aquatic animals', 'Active');
+
+
+UPDATE animalshelter
+SET description = 'A cozy shelter for aquatic animals, fishes, and turtles'
+WHERE sherterid = 4;
+
+
+DELETE FROM animalshelter
+WHERE sherterid = 4;
+Explanation:
+
+
+INSERT INTO rawmaterial (materialtype, description)
+VALUES ('Metal', 'Durable material with various industrial applications');
+
+
+
+INSERT INTO rawmaterial (materialtype, description)
+VALUES (DEFAULT, 'Generic material with no specific type');
+
